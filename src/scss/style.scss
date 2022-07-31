@@ -1,44 +1,25 @@
-@charset "utf-8";
+// 
+// reset
+//
+@use 'base/reset';
 
-$red: #f00;
+// 
+// base
+//
+@use 'base/base';
 
-// 変数が使える
-.hoge {
-    color: $red;
-}
+// 
+// layout
+//
+@use 'layout/layout';
 
-// アルファベット順に並ぶ
-.alphabetical {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-// ベンダープレフィックスが付く
-.prefix {
-    transform: translateY(-50%);
-}
-
-// gridがIE対応される
-.grid {
-    display: grid;
-    grid-template-rows: 100px 50px;
-    grid-template-columns: 150px 1fr;
-}
+// 
+// module
+//
+@use 'modules';
 
 
-.media-query-sample01 {
-    font-size: 14px;
-
-    @media only screen and (min-width: 768px) {
-        font-size: 18px;
-    }
-}
-
-.media-query-sample02 {
-    color: blue;
-
-    @media only screen and (min-width: 768px) {
-        color: green;
-    }
-}
+// 
+// page
+// 
+@use 'page';

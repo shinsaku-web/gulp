@@ -1,0 +1,12 @@
+// ------------------------------color----------------------------------
+$base-color :#E1EBEB;
+$button-color: #29908D;
+$text-color : #007672;
+
+
+// -----------------------------breakpoint---------------------------------
+$breakpoint: 768px; //ブレイクポイント
+$breakpoints: (
+    "sp": "screen and (max-width: #{$breakpoint})",
+    "pc": "screen and (min-width: #{$breakpoint + 1px})"
+);

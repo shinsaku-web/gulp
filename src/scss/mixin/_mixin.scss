@@ -1,0 +1,15 @@
+@use '../setting/setting' as s;
+@use "sass:math";
+
+// mixin
+@mixin mq($breakpoint: sp) {
+	@media #{map-get(s.$breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+// テキストのサイズ設定、3つの変数をとる。
+@mixin text ($font-size: 15, $line-height: 26) {
+	font-size: $font-size + px;
+	line-height: math.div($line-height, $font-size);
+}
