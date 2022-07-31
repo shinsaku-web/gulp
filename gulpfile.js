@@ -5,6 +5,7 @@ const cssdeclsort = require('css-declaration-sorter');
 // const del = require('del');
 const ejs = require("gulp-ejs");
 const gcmq = require('gulp-group-css-media-queries');
+const imagemin = require('gulp-imagemin');
 const mode = require('gulp-mode')();
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
@@ -50,6 +51,13 @@ const compileEjs = done => {
     done();
 }
 
+const compressImages = done => {
+    src("./src/assets/images/**")
+        .pipe(imagemin())
+        .pipe(dest("./dist/images"))
+    done()
+}
+
 const buildServer = done => {
     browserSync.init({
         port: 8080,
@@ -88,5 +96,5 @@ exports.default = series(
 exports.build = series(
     // clean,
     // parallel(compileSass, compileEjs, imgFunc, jsFunc),
-    parallel(compileSass, compileEjs),
+    parallel(compileSass, compileEjs, compressImages),
 );
