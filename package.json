@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "gulp dev": "npx gulp",
-    "gulp build": "npx gulp build",
+    "dev": "npx gulp",
+    "build": "npx gulp build",
     "tasks": "npx gulp --tasks"
   },
   "keywords": [],
