@@ -4,12 +4,13 @@ const metaInfo = {
   description: 'トップページのディスクリプション',
   path: './'
 }
+const title = 'Hello ejs!!!'
 %>
 
 <%- include(metaInfo.path + 'components/_header', {metaInfo: metaInfo} ) %>
 
 <main>
-  <h1>Hello ejs</h1>
+  <h1><%= title %></h1>
   <p>トップページのテキストです</p>
   <a href="/about">Aboutへ</a>
 </main>
